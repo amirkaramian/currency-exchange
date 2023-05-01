@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Exchange.Domain</RootNamespace>
+        <AssemblyName>Exchange.Domain</AssemblyName>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Events\TodoItemCompletedEvent.cs" />
+      <Compile Remove="Events\TodoItemCreatedEvent.cs" />
+      <Compile Remove="Events\TodoItemDeletedEvent.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.0.0" />
+    </ItemGroup>
+
+</Project>
