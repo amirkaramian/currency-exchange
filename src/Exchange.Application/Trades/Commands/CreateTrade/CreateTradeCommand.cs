@@ -47,7 +47,6 @@ public class CreateTradeCommandHandler : IRequestHandler<CreateTradeCommand, Cre
     }
     public async Task<CreateTradeCommandResult> Handle(CreateTradeCommand command, CancellationToken cancellationToken)
     {
-        return new CreateTradeCommandResult() { success = true };
         if (!_memoryCache.TryGetValue(CacheKeys.EntrySymbol, out CurrencySymbols cacheValue))
             throw new RunTimeException("could not do operation");
         var currencyRate = await _currencyService.GetRateAsync(new GetCurrencyRateQuery() { From = command.From, To = command.To }, cancellationToken);
